@@ -1,8 +1,10 @@
 <?php
-var_dump($_GET['text']);
+// var_dump($_GET['text']);
 $text = $_GET['text'];
-var_dump($_GET['bad-word']);
+// var_dump($_GET['bad-word']);
 $bad_word = $_GET['bad-word'];
+
+$censured_text = str_replace($bad_word, '***', $text);
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +24,7 @@ $bad_word = $_GET['bad-word'];
         <p> <?php echo $bad_word; ?></p>
         <p>Lunghezza: <?php echo strlen($bad_word); ?></p>
         <h2>Text Censured</h2>
-        <p> <?php  ?> </p>
+        <p> <?php echo $censured_text; ?> </p>
         <p>Lunghezza: <?php echo strlen($censured_text); ?></p>
     </div>
   
